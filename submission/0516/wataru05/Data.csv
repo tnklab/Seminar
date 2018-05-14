@@ -1,0 +1,46 @@
+from sense_hat import SenseHat
+import csv
+
+hat = SenseHat()
+
+while True:
+
+    
+    
+    
+    temperature = hat.get_temperature()
+    
+    
+    temperature = round(temperature, 1)
+    
+    
+    msg = "temperature=%s" % temperature
+
+    
+    hat.show_message(msg,scroll_speed = 0.05)
+
+    
+    f = open('Data.csv','a')
+
+    csvWriter = csv.writer(f)
+
+    
+    listdata = []
+    listdata.append(temperature)
+    print(listdata)
+    csvWriter.writerow(listdata)
+
+    f.close()
+30.6
+30.6
+30.6
+30.6
+30.6
+30.7
+25.6
+24.4
+23.8
+23.6
+23.2
+23.7
+23.8
